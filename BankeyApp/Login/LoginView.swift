@@ -10,11 +10,13 @@ import UIKit
 
 class LoginView: UIView {
     
+    // MARK: - Properties
     let stackView = UIStackView()
     let userNameTextField = UITextField()
     let passwordTextField = UITextField()
     let deviderView = UIView()
     
+    // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -27,6 +29,7 @@ class LoginView: UIView {
     }
 }
 
+// MARK: - SetupUI
 extension LoginView {
     
     func style() {
