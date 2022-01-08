@@ -5,7 +5,6 @@
 //  Created by Олег Федоров on 04.01.2022.
 //
 
-import Foundation
 import UIKit
 
 class LoginView: UIView {
@@ -99,7 +98,11 @@ extension LoginView: UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        return true
+        if textField.text != "" {
+            return true
+        } else {
+            return false
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

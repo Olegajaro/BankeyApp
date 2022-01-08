@@ -7,6 +7,14 @@
 
 import UIKit
 
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
+protocol LoginViewContollerDelegate: AnyObject {
+     func didLogin()
+}
+
 class LoginViewController: UIViewController {
     
     // MARK: - Properties
@@ -15,6 +23,8 @@ class LoginViewController: UIViewController {
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
+    
+    weak var delegate: LoginViewContollerDelegate?
     
     var userName: String? {
         loginView.userNameTextField.text
@@ -30,6 +40,11 @@ class LoginViewController: UIViewController {
         
         style()
         layout()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
     }
 }
 
@@ -143,13 +158,14 @@ extension LoginViewController {
             return
         }
         
-        if userName.isEmpty || password.isEmpty {
-            configureView(withMessage: "Username / password cannot be blank")
-            return 
-        }
+//        if userName.isEmpty || password.isEmpty {
+//            configureView(withMessage: "Username / password cannot be blank")
+//            return
+//        }
         
-        if userName == "Roger" && password == "qwerty" {
+        if userName == "" && password == "" {
             signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogin()
         } else {
             configureView(withMessage: "Incorrect username / password")
         }
