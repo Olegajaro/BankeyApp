@@ -11,7 +11,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Properties
     let titleLabel = UILabel()
-    let descriptionLabel = UILabel()
+    let subtitleLabel = UILabel()
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
@@ -37,16 +37,17 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     private func style() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "Bankey"
         titleLabel.textAlignment = .center
-        titleLabel.font = UIFont.systemFont(ofSize: 32)
-        titleLabel.numberOfLines = 0
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        titleLabel.adjustsFontForContentSizeCategory = true
+        titleLabel.text = "Bankey"
         
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.text = "Your premium source for all things banking!"
-        descriptionLabel.textAlignment = .center
-        descriptionLabel.font = UIFont.systemFont(ofSize: 18)
-        descriptionLabel.numberOfLines = 0
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.textAlignment = .center
+        subtitleLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        subtitleLabel.adjustsFontForContentSizeCategory = true
+        subtitleLabel.numberOfLines = 0
+        subtitleLabel.text = "Your premium source for all things banking!"
         
         loginView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -68,35 +69,26 @@ extension LoginViewController {
     
     private func layout() {
         view.addSubview(titleLabel)
-        view.addSubview(descriptionLabel)
+        view.addSubview(subtitleLabel)
         view.addSubview(loginView)
         view.addSubview(signInButton)
         view.addSubview(errorMessageLabel)
         
         // TitleLabel
         NSLayoutConstraint.activate([
-            titleLabel.bottomAnchor.constraint(
-                equalTo: descriptionLabel.topAnchor, constant: -32
+            subtitleLabel.topAnchor.constraint(
+                equalToSystemSpacingBelow: titleLabel.bottomAnchor, multiplier: 3
             ),
-            titleLabel.leadingAnchor.constraint(
-                equalTo: loginView.leadingAnchor
-            ),
-            titleLabel.trailingAnchor.constraint(
-                equalTo: loginView.trailingAnchor
-            )
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        // DescriptionLabel
+        // SubtitleLabel
         NSLayoutConstraint.activate([
-            descriptionLabel.bottomAnchor.constraint(
-                equalTo: loginView.topAnchor, constant: -24
+            loginView.topAnchor.constraint(
+                equalToSystemSpacingBelow: subtitleLabel.bottomAnchor, multiplier: 3
             ),
-            descriptionLabel.leadingAnchor.constraint(
-                equalTo: loginView.leadingAnchor
-            ),
-            descriptionLabel.trailingAnchor.constraint(
-                equalTo: loginView.trailingAnchor
-            )
+            subtitleLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+            subtitleLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
         ])
         
         // LoginView

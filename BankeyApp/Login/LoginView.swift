@@ -86,6 +86,12 @@ extension LoginView {
 
 // MARK: - UITextFieldDelegate
 extension LoginView: UITextFieldDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        endEditing(true)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         userNameTextField.endEditing(true)
         passwordTextField.endEditing(true)
