@@ -85,11 +85,11 @@
 		1052DDE72784BD050030D971 /* BankeyApp */ = {
 			isa = PBXGroup;
 			children = (
-				1042654E278A15BE00C29ADB /* Utils */,
-				1025A8132788AE030012F507 /* Onboarding */,
-				1052DE012784C1390030D971 /* Login */,
-				1052DDE82784BD050030D971 /* AppDelegate.swift */,
 				1052DE002784C0FF0030D971 /* Files */,
+				1042654E278A15BE00C29ADB /* Utils */,
+				1052DE012784C1390030D971 /* Login */,
+				1025A8132788AE030012F507 /* Onboarding */,
+				1052DDE82784BD050030D971 /* AppDelegate.swift */,
 			);
 			path = BankeyApp;
 			sourceTree = "<group>";
