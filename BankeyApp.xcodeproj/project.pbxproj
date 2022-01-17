@@ -28,6 +28,7 @@
 		10BD2C882791E9090079BEFE /* DecimalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BD2C872791E9090079BEFE /* DecimalUtils.swift */; };
 		10BD2C8A2791E9B30079BEFE /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BD2C892791E9B30079BEFE /* CurrencyFormatter.swift */; };
 		10BD2C99279206DB0079BEFE /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BD2C98279206DB0079BEFE /* CurrencyFormatterTests.swift */; };
+		10DA24E42795A319001BD38D /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DA24E32795A319001BD38D /* NSNotificationName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		10BD2C892791E9B30079BEFE /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		10BD2C8F279205B70079BEFE /* BankeyAppUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyAppUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10BD2C98279206DB0079BEFE /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
+		10DA24E32795A319001BD38D /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				102740A2278E093E003A16B6 /* UIViewController+Utils.swift */,
 				10BD2C872791E9090079BEFE /* DecimalUtils.swift */,
 				10BD2C892791E9B30079BEFE /* CurrencyFormatter.swift */,
+				10DA24E32795A319001BD38D /* NSNotificationName.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				109FF533278F58F100DE32DE /* AccountSummaryCell.swift in Sources */,
 				1025A8172788BFE80012F507 /* OnboardingViewController.swift in Sources */,
 				102740A5278E0C01003A16B6 /* MainViewController.swift in Sources */,
+				10DA24E42795A319001BD38D /* NSNotificationName.swift in Sources */,
 				101CFAC7278F3E0E000EAB0A /* AccountSummaryViewController.swift in Sources */,
 				1052DDE92784BD050030D971 /* AppDelegate.swift in Sources */,
 				1025A8152788AE7C0012F507 /* OnboardingContainerViewController.swift in Sources */,

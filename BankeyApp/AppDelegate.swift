@@ -30,12 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
         
+        registerForNotifications()
+        
         displayLogin()
         return true
     }
     
 }
 
+// MARK: - Navigation
 extension AppDelegate {
     private func displayLogin() {
         setRootViewController(loginViewController)
@@ -49,14 +52,9 @@ extension AppDelegate {
             setRootViewController(onboardingContainerViewController)
         }
     }
-    
-    private func prepMainView() {
-        mainViewController.setStatusBar()
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().backgroundColor = appColor
-    }
 }
 
+// MARK: - Protocol Delegate Methods
 extension AppDelegate: LoginViewContollerDelegate {
     func didLogin() {
         displaNextScreen()
@@ -71,12 +69,23 @@ extension AppDelegate: OnboardingContainerViewControllerDelegate {
     }
 }
 
-//extension AppDelegate: LogoutDelegate {
-//    func didLogout() {
-//        setRootViewController(loginViewController)
-//    }
-//}
+// MARK: - Notifications
+extension AppDelegate {
+    private func registerForNotifications() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(didLogout),
+            name: .logout,
+            object: nil
+        )
+    }
+    
+    @objc func didLogout() {
+        setRootViewController(loginViewController)
+    }
+}
 
+// MARK: - Helpers
 extension AppDelegate {
     func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
         guard animated, let window = self.window else {
@@ -92,5 +101,11 @@ extension AppDelegate {
                           options: .transitionCrossDissolve,
                           animations: nil,
                           completion: nil)
+    }
+    
+    private func prepMainView() {
+        mainViewController.setStatusBar()
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().backgroundColor = appColor
     }
 }

@@ -32,7 +32,7 @@ class AccountSummaryViewController: UIViewController {
     
     // MARK: - Actions
     @objc private func logoutTapped() {
-        
+        NotificationCenter.default.post(name: .logout, object: nil)
     }
 }
 
