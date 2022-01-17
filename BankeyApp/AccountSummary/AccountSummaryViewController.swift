@@ -7,18 +7,32 @@
 
 import UIKit
 
-private let cellIdentifier = "Cell"
-
 class AccountSummaryViewController: UIViewController {
     
     var accounts: [AccountSummaryCellViewModel] = []
     var tableView = UITableView()
+    
+    lazy var logoutBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(
+            title: "Logout",
+            style: .plain,
+            target: self,
+            action: #selector(logoutTapped)
+        )
+        barButtonItem.tintColor = .label
+        return barButtonItem
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
         fetchData()
+    }
+    
+    // MARK: - Actions
+    @objc private func logoutTapped() {
+        
     }
 }
 
@@ -27,6 +41,7 @@ extension AccountSummaryViewController {
     private func setup() {
         setupTableView()
         setupTableHeaderView()
+        setupNavigationBar()
     }
     
     private func setupTableView() {
@@ -65,6 +80,10 @@ extension AccountSummaryViewController {
         header.frame.size = size
         
         tableView.tableHeaderView = header
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = logoutBarButtonItem
     }
 }
 
