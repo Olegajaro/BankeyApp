@@ -13,7 +13,7 @@ class DummyViewController: UIViewController {
     let label = UILabel()
     let logoutButton = UIButton(type: .system)
     
-    weak var delegate: LogoutDelegate?
+//    weak var delegate: LogoutDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +57,6 @@ extension DummyViewController {
 // MARK: - Actions
 extension DummyViewController {
     @objc func logoutButtonTapped(sender: UIButton) {
-        delegate?.didLogout()
+//        delegate?.didLogout()
     }
 }
