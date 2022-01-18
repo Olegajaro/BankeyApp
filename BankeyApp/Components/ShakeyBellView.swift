@@ -63,8 +63,60 @@ extension ShakeyBellView {
     }
 }
 
+// MARK: - Actions
 extension ShakeyBellView {
     @objc func imageViewTapped() {
-         print("Shake")
+        shakeWith(duration: 1.0, angle: .pi / 8, yOffset: 0.0)
+    }
+    
+    private func shakeWith(duration: Double, angle: CGFloat, yOffset: CGFloat) {
+        let numberOfFrames = 6.0
+        let frameDuration = 1 / numberOfFrames
+        
+        imageView.setAnchorPoint(CGPoint(x: 0.5, y: yOffset))
+        
+        UIView.animateKeyframes(withDuration: duration, delay: 0, options: []) {
+            UIView.addKeyframe(
+                withRelativeStartTime: 0.0,
+                relativeDuration: frameDuration
+            ) {
+                self.imageView.transform = CGAffineTransform(rotationAngle: -angle)
+            }
+            
+            UIView.addKeyframe(
+                withRelativeStartTime: frameDuration,
+                relativeDuration: frameDuration
+            ) {
+                self.imageView.transform = CGAffineTransform(rotationAngle: +angle)
+            }
+            
+            UIView.addKeyframe(
+                withRelativeStartTime: frameDuration * 2,
+                relativeDuration: frameDuration
+            ) {
+                self.imageView.transform = CGAffineTransform(rotationAngle: -angle)
+            }
+            
+            UIView.addKeyframe(
+                withRelativeStartTime: frameDuration * 3,
+                relativeDuration: frameDuration
+            ) {
+                self.imageView.transform = CGAffineTransform(rotationAngle: +angle)
+            }
+            
+            UIView.addKeyframe(
+                withRelativeStartTime: frameDuration * 4,
+                relativeDuration: frameDuration
+            ) {
+                self.imageView.transform = CGAffineTransform(rotationAngle: -angle)
+            }
+            
+            UIView.addKeyframe(
+                withRelativeStartTime: frameDuration * 5,
+                relativeDuration: frameDuration
+            ) {
+                self.imageView.transform = CGAffineTransform.identity
+            }
+        }
     }
 }
