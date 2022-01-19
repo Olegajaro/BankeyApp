@@ -9,9 +9,21 @@ import UIKit
 
 class AccountSummaryViewController: UIViewController {
     
-    var accounts: [AccountSummaryCellViewModel] = []
-    var tableView = UITableView()
+    // Request Models
+    var profile: Profile?
     
+    // View Models
+    var accountCellViewModels: [AccountSummaryCellViewModel] = []
+    var headerViewModel = AccountSummaryHeaderViewModel(
+        welcomeMessage: "Welcome",
+        name: "",
+        date: Date()
+    )
+     
+    // UI Elements
+    var tableView = UITableView()
+    var headerView = AccountSummaryHeaderView(frame: .zero)
+
     lazy var logoutBarButtonItem: UIBarButtonItem = {
         let barButtonItem = UIBarButtonItem(
             title: "Logout",
@@ -27,7 +39,7 @@ class AccountSummaryViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
-        fetchData()
+        fetchDataAndLoadViews()
     }
     
     // MARK: - Actions
@@ -73,13 +85,11 @@ extension AccountSummaryViewController {
     }
     
     private func setupTableHeaderView() {
-        let header = AccountSummaryHeaderView(frame: .zero)
-        
-        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        var size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width = UIScreen.main.bounds.width
-        header.frame.size = size
+        headerView.frame.size = size
         
-        tableView.tableHeaderView = header
+        tableView.tableHeaderView = headerView
     }
     
     private func setupNavigationBar() {
@@ -91,19 +101,19 @@ extension AccountSummaryViewController {
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return accounts.count
+        return accountCellViewModels.count
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard !accounts.isEmpty else { return UITableViewCell() }
+        guard !accountCellViewModels.isEmpty else { return UITableViewCell() }
         
         let cell = tableView.dequeueReusableCell(
             withIdentifier: AccountSummaryCell.reuseID,
             for: indexPath
         ) as! AccountSummaryCell
         
-        let account = accounts[indexPath.row]
+        let account = accountCellViewModels[indexPath.row]
         cell.configure(with: account)
 
         return cell
@@ -119,9 +129,39 @@ extension AccountSummaryViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - Networking
+extension AccountSummaryViewController {
+    
+    private func fetchDataAndLoadViews() {
+        
+        fetchProfile(forUserID: "1") { result in
+            switch result {
+            case .success(let profile):
+                self.profile = profile
+                self.configureTableHeaderView(with: profile)
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        fetchAccounts()
+    }
+    
+    private func configureTableHeaderView(with profile: Profile) {
+        let vm  = AccountSummaryHeaderViewModel(
+            welcomeMessage: "Good Morning",
+            name: profile.firstName,
+            date: Date()
+        )
+        
+        headerView.configure(viewModel: vm)
+    }
+}
+
 // MARK: - API
 extension AccountSummaryViewController {
-    private func fetchData() {
+    private func fetchAccounts() {
         let savings = AccountSummaryCellViewModel(
             accountType: .banking,
             accountName: "Basic Savings",
@@ -137,7 +177,7 @@ extension AccountSummaryViewController {
             balance: 412.83
         )
         let masterCard = AccountSummaryCellViewModel(
-            accountType: .creditCard,
+            accountType: .creditCard,  
             accountName: "Student Mastercard",
             balance: 50.83
         )
@@ -152,7 +192,7 @@ extension AccountSummaryViewController {
             balance: 15000.00
         )
         
-        accounts.append(contentsOf: [savings, chequing,
+        accountCellViewModels.append(contentsOf: [savings, chequing,
                                      masterCard, visa,
                                      investment1, investment2])
     }
