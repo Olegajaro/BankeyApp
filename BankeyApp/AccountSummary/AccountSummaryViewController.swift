@@ -40,7 +40,6 @@ class AccountSummaryViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
-        fetchDataAndLoadViews()
     }
     
     // MARK: - Actions
@@ -55,6 +54,7 @@ extension AccountSummaryViewController {
         setupTableView()
         setupTableHeaderView()
         setupNavigationBar()
+        fetchData()
     }
     
     private func setupTableView() {
@@ -133,28 +133,37 @@ extension AccountSummaryViewController: UITableViewDelegate {
 // MARK: - Networking
 extension AccountSummaryViewController {
     
-    private func fetchDataAndLoadViews() {
+    private func fetchData() {
+        let group = DispatchGroup()
         
+        group.enter()
         fetchProfile(forUserID: "1") { result in
             switch result {
             case .success(let profile):
                 self.profile = profile
                 self.configureTableHeaderView(with: profile)
-                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            
+            group.leave()
         }
         
+        group.enter()
         fetchAccounts(forUserID: "1") { result in
             switch result {
             case .success(let accounts):
                 self.accounts = accounts
                 self.configureTableCells(with: accounts)
-                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            self.tableView.reloadData()
         }
     }
     

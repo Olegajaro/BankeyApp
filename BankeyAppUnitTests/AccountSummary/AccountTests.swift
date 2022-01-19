@@ -47,7 +47,7 @@ class AccountTests: XCTestCase {
         XCTAssertEqual(result.count, 2)
         
         let account1 = result[0]
-        
+         
         XCTAssertEqual(account1.id, "1")
         XCTAssertEqual(account1.type, .banking)
         XCTAssertEqual(account1.name, "Basic Savings")
