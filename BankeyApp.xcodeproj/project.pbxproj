@@ -23,6 +23,8 @@
 		1052DDFD2784BD1E0030D971 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1052DDFC2784BD1E0030D971 /* .gitignore */; };
 		1052DDFF2784BD4B0030D971 /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = 1052DDFE2784BD4B0030D971 /* ReadMe */; };
 		1052DE032784C1650030D971 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052DE022784C1650030D971 /* LoginView.swift */; };
+		107786EA279894CF006E10EF /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107786E9279894CF006E10EF /* ProfileTests.swift */; };
+		107786EC279897B3006E10EF /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107786EB279897B3006E10EF /* AccountTests.swift */; };
 		109FF533278F58F100DE32DE /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109FF532278F58F100DE32DE /* AccountSummaryCell.swift */; };
 		10BD2C862791E0150079BEFE /* AccontSummaryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BD2C852791E0150079BEFE /* AccontSummaryCellViewModel.swift */; };
 		10BD2C882791E9090079BEFE /* Decimal+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BD2C872791E9090079BEFE /* Decimal+Utils.swift */; };
@@ -66,6 +68,8 @@
 		1052DDFC2784BD1E0030D971 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1052DDFE2784BD4B0030D971 /* ReadMe */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
 		1052DE022784C1650030D971 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		107786E9279894CF006E10EF /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		107786EB279897B3006E10EF /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		109FF532278F58F100DE32DE /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		10BD2C852791E0150079BEFE /* AccontSummaryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccontSummaryCellViewModel.swift; sourceTree = "<group>"; };
 		10BD2C872791E9090079BEFE /* Decimal+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Utils.swift"; sourceTree = "<group>"; };
@@ -189,6 +193,23 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		107786E7279894A4006E10EF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				10BD2C98279206DB0079BEFE /* CurrencyFormatterTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		107786E8279894B9006E10EF /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				107786E9279894CF006E10EF /* ProfileTests.swift */,
+				107786EB279897B3006E10EF /* AccountTests.swift */,
+			);
+			path = AccountSummary;
+			sourceTree = "<group>";
+		};
 		109FF530278F586600DE32DE /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +232,8 @@
 		10BD2C90279205B70079BEFE /* BankeyAppUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				10BD2C98279206DB0079BEFE /* CurrencyFormatterTests.swift */,
+				107786E8279894B9006E10EF /* AccountSummary */,
+				107786E7279894A4006E10EF /* Utils */,
 			);
 			path = BankeyAppUnitTests;
 			sourceTree = "<group>";
@@ -358,6 +380,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				10BD2C99279206DB0079BEFE /* CurrencyFormatterTests.swift in Sources */,
+				107786EC279897B3006E10EF /* AccountTests.swift in Sources */,
+				107786EA279894CF006E10EF /* ProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

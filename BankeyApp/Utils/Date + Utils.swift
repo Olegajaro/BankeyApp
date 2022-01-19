@@ -11,6 +11,7 @@ extension Date {
     
     static var bankeyDateFormatter: DateFormatter {
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
         formatter.timeZone = TimeZone(abbreviation: "MDT")
         return formatter
     }
