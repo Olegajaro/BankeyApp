@@ -30,6 +30,8 @@
 		10BD2C99279206DB0079BEFE /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BD2C98279206DB0079BEFE /* CurrencyFormatterTests.swift */; };
 		10DA24E42795A319001BD38D /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DA24E32795A319001BD38D /* NSNotificationName.swift */; };
 		10DA24E62795AABF001BD38D /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DA24E52795AABF001BD38D /* UITextField+SecureToggle.swift */; };
+		10E0CF5927982E37005E41FD /* AccountSummaryHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0CF5827982E37005E41FD /* AccountSummaryHeaderViewModel.swift */; };
+		10E0CF5B27982FE4005E41FD /* Date + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0CF5A27982FE4005E41FD /* Date + Utils.swift */; };
 		10EED61F2797427A00C0D821 /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EED61E2797427A00C0D821 /* ShakeyBellView.swift */; };
 		10EED62127974A5D00C0D821 /* UIView + AnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EED62027974A5D00C0D821 /* UIView + AnchorPoint.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +73,8 @@
 		10BD2C98279206DB0079BEFE /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		10DA24E32795A319001BD38D /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		10DA24E52795AABF001BD38D /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
+		10E0CF5827982E37005E41FD /* AccountSummaryHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderViewModel.swift; sourceTree = "<group>"; };
+		10E0CF5A27982FE4005E41FD /* Date + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Utils.swift"; sourceTree = "<group>"; };
 		10EED61E2797427A00C0D821 /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
 		10EED62027974A5D00C0D821 /* UIView + AnchorPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + AnchorPoint.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +121,7 @@
 			children = (
 				102740A2278E093E003A16B6 /* UIViewController+Utils.swift */,
 				10BD2C872791E9090079BEFE /* Decimal+Utils.swift */,
+				10E0CF5A27982FE4005E41FD /* Date + Utils.swift */,
 				10DA24E52795AABF001BD38D /* UITextField+SecureToggle.swift */,
 				10EED62027974A5D00C0D821 /* UIView + AnchorPoint.swift */,
 				1042654F278A15CE00C29ADB /* LocalState.swift */,
@@ -185,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				101CFAC8278F43D3000EAB0A /* AccountSummaryHeaderView.swift */,
+				10E0CF5827982E37005E41FD /* AccountSummaryHeaderViewModel.swift */,
 				101CFACA278F4405000EAB0A /* AccountSummaryHeaderView.xib */,
 			);
 			path = Header;
@@ -323,6 +329,7 @@
 				1052DE032784C1650030D971 /* LoginView.swift in Sources */,
 				10EED61F2797427A00C0D821 /* ShakeyBellView.swift in Sources */,
 				10426550278A15CE00C29ADB /* LocalState.swift in Sources */,
+				10E0CF5B27982FE4005E41FD /* Date + Utils.swift in Sources */,
 				10EED62127974A5D00C0D821 /* UIView + AnchorPoint.swift in Sources */,
 				10BD2C862791E0150079BEFE /* AccontSummaryCellViewModel.swift in Sources */,
 				10BD2C8A2791E9B30079BEFE /* CurrencyFormatter.swift in Sources */,
@@ -337,6 +344,7 @@
 				10DA24E42795A319001BD38D /* NSNotificationName.swift in Sources */,
 				101CFAC7278F3E0E000EAB0A /* AccountSummaryViewController.swift in Sources */,
 				1052DDE92784BD050030D971 /* AppDelegate.swift in Sources */,
+				10E0CF5927982E37005E41FD /* AccountSummaryHeaderViewModel.swift in Sources */,
 				1025A8152788AE7C0012F507 /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
