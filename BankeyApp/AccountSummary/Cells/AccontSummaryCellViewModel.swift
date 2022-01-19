@@ -7,14 +7,14 @@
 
 import Foundation
 
-enum AccuntType: String {
+enum AccountType: String, Codable {
     case banking = "Banking"
-    case creditCard = "Credit Card"
+    case creditCard = "CreditCard"
     case investment = "Investment"
 }
 
 struct AccountSummaryCellViewModel {
-    let accountType: AccuntType
+    let accountType: AccountType
     let accountName: String
     let balance: Decimal
     
