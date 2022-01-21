@@ -49,16 +49,16 @@ extension AccountSummaryViewController {
         guard
             let url = URL(string: "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(userID)")
         else { return }
-        
+
         let urlSession = URLSession.shared
-        
+
         let task = urlSession.dataTask(with: url) { data, response, error in
-            
+
             guard let data = data, error == nil else {
                 completion(.failure(.serverError))
                 return
             }
-            
+
             guard
                 let httpResponse = response as? HTTPURLResponse,
                 (200...299).contains(httpResponse.statusCode)
@@ -66,7 +66,7 @@ extension AccountSummaryViewController {
                 completion(.failure(.responseError))
                 return
             }
-            
+
             do {
                 let profile = try JSONDecoder().decode(Profile.self, from: data)
                 DispatchQueue.main.async {
@@ -76,7 +76,7 @@ extension AccountSummaryViewController {
                 completion(.failure(.decodingError))
             }
         }
-        
+
         task.resume()
     }
     
