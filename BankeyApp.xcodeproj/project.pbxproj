@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		10118519279ADA4D00556386 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118518279ADA4D00556386 /* SkeletonLoadable.swift */; };
 		1011851B279ADD6000556386 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1011851A279ADD6000556386 /* SkeletonCell.swift */; };
+		1011851E279B28BF00556386 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1011851D279B28BF00556386 /* ProfileManager.swift */; };
 		101CFAC7278F3E0E000EAB0A /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CFAC6278F3E0E000EAB0A /* AccountSummaryViewController.swift */; };
 		101CFAC9278F43D3000EAB0A /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CFAC8278F43D3000EAB0A /* AccountSummaryHeaderView.swift */; };
 		101CFACB278F4405000EAB0A /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 101CFACA278F4405000EAB0A /* AccountSummaryHeaderView.xib */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		10118518279ADA4D00556386 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
 		1011851A279ADD6000556386 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
+		1011851D279B28BF00556386 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		101CFAC6278F3E0E000EAB0A /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		101CFAC8278F43D3000EAB0A /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		101CFACA278F4405000EAB0A /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1011851C279B289000556386 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1011851D279B28BF00556386 /* ProfileManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		101CFAC5278F3DE4000EAB0A /* AccountSummary */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +124,7 @@
 				10E0CF5C2798325D005E41FD /* AccountSummaryViewController + Networking.swift */,
 				109FF530278F586600DE32DE /* Header */,
 				109FF531278F58A100DE32DE /* Cells */,
+				1011851C279B289000556386 /* Networking */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -357,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10118519279ADA4D00556386 /* SkeletonLoadable.swift in Sources */,
+				1011851E279B28BF00556386 /* ProfileManager.swift in Sources */,
 				102740A3278E093E003A16B6 /* UIViewController+Utils.swift in Sources */,
 				1052DE032784C1650030D971 /* LoginView.swift in Sources */,
 				10EED61F2797427A00C0D821 /* ShakeyBellView.swift in Sources */,

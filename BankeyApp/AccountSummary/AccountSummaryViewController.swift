@@ -26,6 +26,9 @@ class AccountSummaryViewController: UIViewController {
     var headerView = AccountSummaryHeaderView(frame: .zero)
     let refreshControl = UIRefreshControl()
     
+    // Networking
+    let profileManager = ProfileManager()
+    
     var isLoaded = false
 
     lazy var logoutBarButtonItem: UIBarButtonItem = {
@@ -166,7 +169,7 @@ extension AccountSummaryViewController {
         let userID = String(Int.random(in: 1..<4))
         
         group.enter()
-        fetchProfile(forUserID: userID) { result in
+        profileManager.fetchProfile(forUserID: userID) { result in
             switch result {
             case .success(let profile):
                 self.profile = profile
