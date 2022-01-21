@@ -32,7 +32,7 @@ struct Profile: Codable {
     }
 }
 
-class ProfileManager {
+class ProfileManager: ProfileManageable {
     func fetchProfile(
         forUserID userID: String,
         completion: @escaping (Result<Profile, NetworkError>) -> Void

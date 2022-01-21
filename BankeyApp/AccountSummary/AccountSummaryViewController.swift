@@ -27,7 +27,14 @@ class AccountSummaryViewController: UIViewController {
     let refreshControl = UIRefreshControl()
     
     // Networking
-    let profileManager = ProfileManager()
+    var profileManager: ProfileManageable = ProfileManager()
+    
+    // Error alert
+    lazy var errorAlert: UIAlertController = {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        return alert
+    }()
     
     var isLoaded = false
 
@@ -168,6 +175,15 @@ extension AccountSummaryViewController {
         // Testing - random number selection
         let userID = String(Int.random(in: 1..<4))
         
+        fetchProfile(group: group, userID: userID)
+        fetchAccounts(group: group, userID: userID)
+
+        group.notify(queue: .main) {
+            self.reloadView()
+        }
+    }
+    
+    private func fetchProfile(group: DispatchGroup, userID: String) {
         group.enter()
         profileManager.fetchProfile(forUserID: userID) { result in
             switch result {
@@ -178,7 +194,9 @@ extension AccountSummaryViewController {
             }
             group.leave()
         }
-        
+    }
+    
+    private func fetchAccounts(group: DispatchGroup, userID: String) {
         group.enter()
         fetchAccounts(forUserID: userID) { result in
             switch result {
@@ -189,17 +207,17 @@ extension AccountSummaryViewController {
             }
             group.leave()
         }
+    }
+    
+    private func reloadView() {
+        self.tableView.refreshControl?.endRefreshing()
         
-        group.notify(queue: .main) {
-            self.tableView.refreshControl?.endRefreshing()
-            
-            guard let profile = self.profile  else { return }
-        
-            self.isLoaded = true
-            self.configureTableHeaderView(with: profile)
-            self.configureTableCells(with: self.accounts)
-            self.tableView.reloadData()
-        }
+        guard let profile = self.profile  else { return }
+    
+        self.isLoaded = true
+        self.configureTableHeaderView(with: profile)
+        self.configureTableCells(with: self.accounts)
+        self.tableView.reloadData()
     }
     
     private func configureTableHeaderView(with profile: Profile) {
@@ -223,6 +241,12 @@ extension AccountSummaryViewController {
     }
     
     private func displayError(_ error: NetworkError) {
+        let titleAndMessage = titleAndMessage(for: error)
+        self.showErrorAlert(title: titleAndMessage.0,
+                            message: titleAndMessage.1)
+    }
+    
+    private func titleAndMessage(for error: NetworkError) -> (String, String) {
         let title: String
         let message: String
         
@@ -238,18 +262,14 @@ extension AccountSummaryViewController {
             message = "We could not process your request. Please try again."
         }
         
-        self.showErrorAlert(title: title, message: message)
+        return (title, message)
     }
     
     private func showErrorAlert(title: String, message: String) {
-        let alert = UIAlertController(
-            title: title,
-            message: message,
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        errorAlert.title = title
+        errorAlert.message = message
         
-        present(alert, animated: true)
+        present(errorAlert, animated: true, completion: nil)
     }
 }
 
@@ -270,5 +290,16 @@ extension AccountSummaryViewController {
         profile = nil
         accounts = []
         isLoaded = false
+    }
+}
+
+// MARK: - Unit Testing
+extension AccountSummaryViewController {
+    func titleAndMessageForTesting(for error: NetworkError) -> (String, String) {
+        return titleAndMessage(for: error)
+    }
+    
+    func forceFetchProfile() {
+        fetchProfile(group: DispatchGroup(), userID: "1")
     }
 }
