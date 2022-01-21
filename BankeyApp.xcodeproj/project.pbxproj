@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10118519279ADA4D00556386 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118518279ADA4D00556386 /* SkeletonLoadable.swift */; };
+		1011851B279ADD6000556386 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1011851A279ADD6000556386 /* SkeletonCell.swift */; };
 		101CFAC7278F3E0E000EAB0A /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CFAC6278F3E0E000EAB0A /* AccountSummaryViewController.swift */; };
 		101CFAC9278F43D3000EAB0A /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CFAC8278F43D3000EAB0A /* AccountSummaryHeaderView.swift */; };
 		101CFACB278F4405000EAB0A /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 101CFACA278F4405000EAB0A /* AccountSummaryHeaderView.xib */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10118518279ADA4D00556386 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
+		1011851A279ADD6000556386 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 		101CFAC6278F3E0E000EAB0A /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 		101CFAC8278F43D3000EAB0A /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		101CFACA278F4405000EAB0A /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
@@ -224,7 +228,9 @@
 			isa = PBXGroup;
 			children = (
 				109FF532278F58F100DE32DE /* AccountSummaryCell.swift */,
+				1011851A279ADD6000556386 /* SkeletonCell.swift */,
 				10BD2C852791E0150079BEFE /* AccontSummaryCellViewModel.swift */,
+				10118518279ADA4D00556386 /* SkeletonLoadable.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10118519279ADA4D00556386 /* SkeletonLoadable.swift in Sources */,
 				102740A3278E093E003A16B6 /* UIViewController+Utils.swift in Sources */,
 				1052DE032784C1650030D971 /* LoginView.swift in Sources */,
 				10EED61F2797427A00C0D821 /* ShakeyBellView.swift in Sources */,
@@ -359,6 +366,7 @@
 				10BD2C862791E0150079BEFE /* AccontSummaryCellViewModel.swift in Sources */,
 				10BD2C8A2791E9B30079BEFE /* CurrencyFormatter.swift in Sources */,
 				101CFAC9278F43D3000EAB0A /* AccountSummaryHeaderView.swift in Sources */,
+				1011851B279ADD6000556386 /* SkeletonCell.swift in Sources */,
 				1042654D278A0D9F00C29ADB /* DummyViewController.swift in Sources */,
 				1052DDED2784BD050030D971 /* LoginViewController.swift in Sources */,
 				10BD2C882791E9090079BEFE /* Decimal+Utils.swift in Sources */,
