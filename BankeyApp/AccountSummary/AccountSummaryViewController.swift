@@ -26,6 +26,17 @@ class AccountSummaryViewController: UIViewController {
     var headerView = AccountSummaryHeaderView(frame: .zero)
     let refreshControl = UIRefreshControl()
     
+    lazy var logoutBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(
+            title: "Logout",
+            style: .plain,
+            target: self,
+            action: #selector(logoutTapped)
+        )
+        barButtonItem.tintColor = .label
+        return barButtonItem
+    }()
+    
     // Networking
     var profileManager: ProfileManageable = ProfileManager()
     
@@ -38,16 +49,6 @@ class AccountSummaryViewController: UIViewController {
     
     var isLoaded = false
 
-    lazy var logoutBarButtonItem: UIBarButtonItem = {
-        let barButtonItem = UIBarButtonItem(
-            title: "Logout",
-            style: .plain,
-            target: self,
-            action: #selector(logoutTapped)
-        )
-        barButtonItem.tintColor = .label
-        return barButtonItem
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,8 @@ class AccountSummaryViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         setGradientTo(tableView)
     }
 }
