@@ -104,8 +104,19 @@ extension AppDelegate {
     }
     
     private func prepMainView() {
-        mainViewController.setStatusBar()
+        setStatusBar(for: mainViewController)
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = appColor
+    }
+    
+    private func setStatusBar(for viewController: UIViewController) {
+        guard
+            let statusBarSize = window?.windowScene?.statusBarManager?.statusBarFrame.size
+        else { return }
+        let frame = CGRect(origin: .zero, size: statusBarSize)
+        let statusBarView = UIView(frame: frame)
+        
+        statusBarView.backgroundColor = appColor
+        viewController.view.addSubview(statusBarView)
     }
 }
