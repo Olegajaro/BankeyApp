@@ -25,7 +25,6 @@
 		1052DDF22784BD060030D971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1052DDF12784BD060030D971 /* Assets.xcassets */; };
 		1052DDF52784BD060030D971 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1052DDF32784BD060030D971 /* LaunchScreen.storyboard */; };
 		1052DDFD2784BD1E0030D971 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1052DDFC2784BD1E0030D971 /* .gitignore */; };
-		1052DDFF2784BD4B0030D971 /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = 1052DDFE2784BD4B0030D971 /* ReadMe */; };
 		1052DE032784C1650030D971 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052DE022784C1650030D971 /* LoginView.swift */; };
 		107786EA279894CF006E10EF /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107786E9279894CF006E10EF /* ProfileTests.swift */; };
 		107786EC279897B3006E10EF /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107786EB279897B3006E10EF /* AccountTests.swift */; };
@@ -74,7 +73,6 @@
 		1052DDF42784BD060030D971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1052DDF62784BD060030D971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1052DDFC2784BD1E0030D971 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		1052DDFE2784BD4B0030D971 /* ReadMe */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
 		1052DE022784C1650030D971 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		107786E9279894CF006E10EF /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
 		107786EB279897B3006E10EF /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 		1052DDDC2784BD050030D971 = {
 			isa = PBXGroup;
 			children = (
-				1052DDFE2784BD4B0030D971 /* ReadMe */,
 				1052DDFC2784BD1E0030D971 /* .gitignore */,
 				1052DDE72784BD050030D971 /* BankeyApp */,
 				10BD2C90279205B70079BEFE /* BankeyAppUnitTests */,
@@ -348,7 +345,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1052DDFF2784BD4B0030D971 /* ReadMe in Resources */,
 				101CFACB278F4405000EAB0A /* AccountSummaryHeaderView.xib in Resources */,
 				1052DDFD2784BD1E0030D971 /* .gitignore in Resources */,
 				1052DDF52784BD060030D971 /* LaunchScreen.storyboard in Resources */,
