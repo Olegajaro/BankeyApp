@@ -54,6 +54,10 @@ class AccountSummaryViewController: UIViewController {
         
         setup()
     }
+    
+    override func viewDidLayoutSubviews() {
+        setGradientTo(tableView)
+    }
 }
 
 // MARK: - SetupUI
@@ -68,7 +72,6 @@ extension AccountSummaryViewController {
     }
     
     private func setupTableView() {
-        tableView.backgroundColor = appColor
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -123,6 +126,25 @@ extension AccountSummaryViewController {
         accounts = Array(repeating: row, count: 10)
         
         configureTableCells(with: accounts)
+    }
+    
+    func setGradientTo(_ tableView: UITableView) {
+        
+        let gradientBackgroundColors = [appColor.cgColor,
+                                        UIColor.systemBackground.cgColor]
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientBackgroundColors
+        gradientLayer.locations = [0.7, 1.0]
+        
+        gradientLayer.frame = CGRect(
+            x: 0, y: 0,
+            width: tableView.bounds.size.width,
+            height: tableView.bounds.size.height / 2
+        )
+        let backgroundView = UIView(frame: tableView.bounds)
+        backgroundView.layer.insertSublayer(gradientLayer, at: 0)
+        tableView.backgroundView = backgroundView
     }
 }
 
