@@ -264,7 +264,9 @@ extension AccountSummaryViewController {
             )
         }
     }
-    
+}
+// MARK: - Error Alert
+extension AccountSummaryViewController {
     private func displayError(_ error: NetworkError) {
         let titleAndMessage = titleAndMessage(for: error)
         self.showErrorAlert(title: titleAndMessage.0,

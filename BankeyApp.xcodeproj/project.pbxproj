@@ -18,7 +18,6 @@
 		1025A8172788BFE80012F507 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1025A8162788BFE80012F507 /* OnboardingViewController.swift */; };
 		102740A3278E093E003A16B6 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102740A2278E093E003A16B6 /* UIViewController+Utils.swift */; };
 		102740A5278E0C01003A16B6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102740A4278E0C01003A16B6 /* MainViewController.swift */; };
-		1042654D278A0D9F00C29ADB /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042654C278A0D9F00C29ADB /* DummyViewController.swift */; };
 		10426550278A15CE00C29ADB /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042654F278A15CE00C29ADB /* LocalState.swift */; };
 		1052DDE92784BD050030D971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052DDE82784BD050030D971 /* AppDelegate.swift */; };
 		1052DDED2784BD050030D971 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1052DDEC2784BD050030D971 /* LoginViewController.swift */; };
@@ -64,7 +63,6 @@
 		1025A8162788BFE80012F507 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		102740A2278E093E003A16B6 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		102740A4278E0C01003A16B6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		1042654C278A0D9F00C29ADB /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		1042654F278A15CE00C29ADB /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		1052DDE52784BD050030D971 /* BankeyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankeyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1052DDE82784BD050030D971 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 			children = (
 				1052DDEC2784BD050030D971 /* LoginViewController.swift */,
 				1052DE022784C1650030D971 /* LoginView.swift */,
-				1042654C278A0D9F00C29ADB /* DummyViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -378,7 +375,6 @@
 				10BD2C8A2791E9B30079BEFE /* CurrencyFormatter.swift in Sources */,
 				101CFAC9278F43D3000EAB0A /* AccountSummaryHeaderView.swift in Sources */,
 				1011851B279ADD6000556386 /* SkeletonCell.swift in Sources */,
-				1042654D278A0D9F00C29ADB /* DummyViewController.swift in Sources */,
 				1052DDED2784BD050030D971 /* LoginViewController.swift in Sources */,
 				10BD2C882791E9090079BEFE /* Decimal+Utils.swift in Sources */,
 				109FF533278F58F100DE32DE /* AccountSummaryCell.swift in Sources */,
