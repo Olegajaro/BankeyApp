@@ -8,7 +8,7 @@ ____
 
 ### Особенности 
 
-Для реализации __Onboadrding__ создан переиспульзуемый __ContainerViewController__, в который можно подставить нужное изображение и описание, при создании экземпляра данного класса.
+Для реализации __Onboarding__ создан переиспульзуемый класс __ContainerViewController__, в который можно подставить нужное изображение и описание, при создании экземпляра данного класса.
 Сам "контейнер" реализован в классе __OnboardingContainerViewController__ при помощи __UIPageViewController__, в который добавлены 3 экземпяра класса __ContainerViewController__.
 Подробно смотрите в коде __[здесь](https://github.com/Olegajaro/BankeyApp/blob/main/BankeyApp/Onboarding/OnboardingContainerViewController.swift).__
 
