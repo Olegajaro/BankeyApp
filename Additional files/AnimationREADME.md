@@ -18,8 +18,35 @@ ___
 ### ShakeyBell
 Для анимированного колокольчика создан отдельный класс __ShakeBellView__ в дирекетории Components.
 Анимированный объект представляет собой __UIImageView__, для которого с помощью __UITapGestureRecognizer__ добавлено действие по нажатию. 
-Одна анимация представляет собой 6 смещений на угол 22.5 (-22.5) градуса в течении 1.0 секунды относительно __imageView.setAnchorPoint(CGPoint(x: 0.5, y: 0.0))__.
+Анимация представляет собой 6 смещений на угол 22.5 (-22.5) градуса в течении 1.0 секунды относительно __imageView.setAnchorPoint(CGPoint(x: 0.5, y: 0.0))__.
 ```swift
+extension UIView {
+    func setAnchorPoint(_ point: CGPoint) {
+        var newPoint = CGPoint(
+            x: bounds.size.width * point.x,
+            y: bounds.size.height * point.y
+        )
+        var oldPoint = CGPoint(
+            x: bounds.size.width * layer.anchorPoint.x,
+            y: bounds.size.height * layer.anchorPoint.y
+        )
+        
+        newPoint = newPoint.applying(transform)
+        oldPoint = oldPoint.applying(transform)
+        
+        var position = layer.position
+        
+        position.x -= oldPoint.x
+        position.x += newPoint.x
+        
+        position.y -= oldPoint.y
+        position.y += newPoint.y
+        
+        layer.position = position
+        layer.anchorPoint = point
+    }
+}
+
     @objc func imageViewTapped() {
         shakeWith(duration: 1.0, angle: .pi / 8, yOffset: 0.0)
     }
@@ -79,7 +106,7 @@ ___
 ### SkeletonView
 
 SkeletonView представляет собой дополнительное представление, которое по своей сути повторяет ячейку AccountSummaryCell. 
-Появляется оно только при ошибках в сети или долгой подгрузке данных. Анимируется в данном варианте измение цвета __CAGradienLayer__, который добавляется к каждому лейблу. Реализация происходит при помощи __CAAnimationGroup__ и __CABasicAnimation__ и метода в протоколе __SkeletonLoadable__, на который будет подписан класс __[SkeletonCell](https://github.com/Olegajaro/BankeyApp/blob/main/BankeyApp/AccountSummary/Cells/SkeletonCell.swift)__.
+Появляется оно только при ошибках в сети или долгой подгрузке данных. Анимируется в данном варианте измение цвета __CAGradienLayer__, который добавляется к каждому лейблу. Реализация происходит при помощи __CAAnimationGroup__, __CABasicAnimation__ и метода в протоколе __SkeletonLoadable__, на который будет подписан класс __[SkeletonCell](https://github.com/Olegajaro/BankeyApp/blob/main/BankeyApp/AccountSummary/Cells/SkeletonCell.swift)__.
 Для эффекта рассинхрона смены цветов, начало анимации каждого следующего объекта будет через 0.33 секунды.
 
 ```swift
